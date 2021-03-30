@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
-import cn from 'classnames'
+import Menu from '@cmp/site/Menu'
 
 type MetaProps = {
   title: string
@@ -41,13 +41,11 @@ const MainLayout: React.FC<{ pageContext: PageProps }> = ({
 
   const meta: MetaProps = data.site.siteMetadata
 
-  const bg = pageContext.tags.find(tag => tag.includes('bg-'))
-
   return (
     <>
       <SEO {...meta} />
-      <div className={cn('main-layout min-h-screen noise text-yellow_2', bg)}>
-        {children}
+      <div className='main-layout'>
+        <Menu>{children}</Menu>
       </div>
     </>
   )

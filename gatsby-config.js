@@ -15,6 +15,7 @@ const prismicPluginConfig = {
     linkResolver: () => doc => linkResolver(doc),
     schemas: {
       page: require('./src/prismic/schemas/page.json'),
+      menu: require('./src/prismic/schemas/menu.json'),
     },
     lang: '*',
   },

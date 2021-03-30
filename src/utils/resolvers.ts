@@ -19,3 +19,15 @@ export const pageResolver = (node: any): PageInterface => ({
   subtitle: node.data.subtitle,
   body: node.data.body,
 })
+
+export interface MenuInterface {
+  tags: string[]
+  id: string
+  pages: PageInterface[]
+}
+
+export const menuResolver = (node: any): MenuInterface => ({
+  id: node.id,
+  tags: node.tags,
+  pages: node.data.pages.map((item: any) => pageResolver(item.page.document)),
+})

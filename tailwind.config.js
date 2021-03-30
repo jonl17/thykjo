@@ -1,5 +1,15 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
+  purge: {
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+    safelist: [
+      'bg-yellow',
+      'bg-blue',
+      'bg-red',
+      'bg-purple',
+      'bg-dark-blue',
+      'bg-green',
+    ],
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -23,10 +33,10 @@ module.exports = {
       purple: '#9500FF',
       black: '#000',
       white: '#fff',
-      yellow_2: '#FFF4CC',
+      'yellow-2': '#FFF4CC',
       green: '#76A43D',
       red: '#A74833',
-      dark_blue: '#438BA7',
+      'dark-blue': '#438BA7',
     },
     extend: {},
   },

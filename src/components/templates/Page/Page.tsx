@@ -9,7 +9,7 @@ const Page = ({ data }: { data: any }) => {
   const page = pageResolver(data.prismicPage)
   return (
     <>
-      <div>
+      <div className='text-yellow-2'>
         <Head title={page.title} description={page.subtitle} />
         {page.body.map((slice, i) => (
           <SliceMapping key={i} slice={slice} />
