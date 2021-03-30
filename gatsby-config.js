@@ -1,6 +1,30 @@
 const path = require('path')
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const { accessToken, repositoryName } = require('./prismic.config')
+const linkResolver = require('./src/prismic/linkResolver')
+
+const prismicPluginConfig = {
+  resolve: 'gatsby-source-prismic',
+  options: {
+    repositoryName,
+    accessToken,
+    linkResolver: () => doc => linkResolver(doc),
+    schemas: {
+      page: require('./src/prismic/schemas/page.json'),
+    },
+    lang: '*',
+  },
+}
+
 module.exports = {
+  siteMetadata: {
+    title: 'Þykjó',
+    description: 'Þverfaglegt hönnunarteymi',
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-alias-imports`,
@@ -23,5 +47,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-postcss',
+    prismicPluginConfig,
   ],
 }

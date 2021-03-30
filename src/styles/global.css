@@ -1,3 +1,51 @@
 @tailwind base;
+
+@layer base {
+  @font-face {
+    font-family: BuenosAires;
+    src: url('./fonts/BuenosAires_Family/BuenosAires-Regular.otf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: BuenosAires;
+    src: url('./fonts/BuenosAires_Family/BuenosAires-SemiBold.otf');
+    font-weight: 500;
+  }
+
+  * {
+    @apply font-main;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-semibold mb-3;
+  }
+  h1 {
+    @apply text-h1;
+  }
+  h2 {
+    @apply text-h2;
+  }
+  h3 {
+    @apply text-h3;
+  }
+  h4 {
+    @apply text-h4;
+  }
+  h5 {
+    @apply text-h5;
+  }
+  p,
+  a {
+    @apply text-parag font-regular;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
+
+@import './customClasses.css';
