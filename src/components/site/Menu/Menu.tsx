@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery, Link, navigate } from 'gatsby'
 import '@src/prismic/fragments/menu'
 import { menuResolver, PageInterface } from '@src/utils/resolvers'
 import cn from 'classnames'
@@ -20,22 +20,26 @@ const useGetMenu = () => {
 const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
   const { pathname } = useLocation()
 
-  const active = pathname === page.url
+  const active = pathname === page.url || pathname === page.url + '/'
 
   return (
-    <Link
-      activeClassName='flex-1 cursor-auto'
+    <div
       className={cn('noise menu-transition', page.bg, {
-        'inactive-menu-item': !active,
+        'inactive-menu-item cursor-pointer': !active,
+        'flex-1 cursor-auto': active,
       })}
-      to={page.url}
+      onClick={() => navigate(page.url)}
     >
       {active ? (
         <div>{children}</div>
       ) : (
-        <h2 className='rotate'>{page.uid === 'frontpage' ? '' : page.uid}</h2>
+        <Link to={page.url}>
+          <h2 className='rotate'>
+            {page.uid === 'frontpage' ? 'Heim' : page.uid}
+          </h2>
+        </Link>
       )}
-    </Link>
+    </div>
   )
 }
 

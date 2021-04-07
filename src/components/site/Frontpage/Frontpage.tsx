@@ -7,7 +7,7 @@ const Frontpage = () => {
     <div className='frontpage h-screen'>
       <div className='grid place-items-center grid-cols-1 grid-rows-3 h-screen'>
         <Icon type='eyes' />
-        <Icon className='lg:mb-32' type='logo' />
+        <Icon className='lg:mb-16' type='logo' />
         <ContactInformation />
       </div>
     </div>
