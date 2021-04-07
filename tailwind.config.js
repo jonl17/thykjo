@@ -1,14 +1,9 @@
 module.exports = {
   purge: {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
-    safelist: [
-      'bg-yellow',
-      'bg-blue',
-      'bg-red',
-      'bg-purple',
-      'bg-dark-blue',
-      'bg-green',
-    ],
+    options: {
+      safelist: [/^bg-/],
+    },
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -20,11 +15,10 @@ module.exports = {
       semibold: '500',
     },
     fontSize: {
-      h1: ['60px', '78.9px'],
+      h1: ['60px', '78px'],
       h2: ['35px', '35px'],
       h3: ['25px', '25px'],
-      h4: ['18px', '27.54px'],
-      h5: ['16px', '16px'],
+      h4: ['16px', '16px'],
       parag: ['16px', '21.04px'],
     },
     colors: {

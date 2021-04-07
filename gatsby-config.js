@@ -16,6 +16,7 @@ const prismicPluginConfig = {
     schemas: {
       page: require('./src/prismic/schemas/page.json'),
       menu: require('./src/prismic/schemas/menu.json'),
+      contact_information: require('./src/prismic/schemas/contact_information.json'),
     },
     lang: '*',
   },

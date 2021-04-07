@@ -36,9 +36,6 @@
   h4 {
     @apply text-h4;
   }
-  h5 {
-    @apply text-h5;
-  }
   p,
   a {
     @apply text-parag font-regular;

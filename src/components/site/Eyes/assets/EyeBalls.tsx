@@ -22,3 +22,16 @@ export const EyeBalls = () => {
     </svg>
   )
 }
+
+export const SimpleEyes = () => (
+  <>
+    <svg width='100' height='100' className='eye'>
+      <circle cx='50' cy='50' r='50' fill='white' className='eyeball-1' />
+      <circle cx='50' cy='50' r='30' fill='#0D0D20' className='pupil-1' />
+    </svg>
+    <svg width='100' height='100' className='eye'>
+      <circle cx='50' cy='50' r='50' fill='white' className='eyeball-2' />
+      <circle cx='50' cy='50' r='30' fill='#0D0D20' className='pupil-2' />
+    </svg>
+  </>
+)

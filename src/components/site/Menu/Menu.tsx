@@ -24,15 +24,17 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 
   return (
     <Link
-      activeClassName='flex-1 pointer-events-none'
-      className={cn('noise transition-all bg-yellow', {
+      activeClassName='flex-1 cursor-auto'
+      className={cn('noise menu-transition', page.bg, {
         'inactive-menu-item': !active,
-        'bg-red': page.uid === 'verkefni',
-        'bg-dark-blue': page.uid === 'thykjo',
       })}
       to={page.url}
     >
-      {active ? <div>{children}</div> : <h2 className='rotate'>{page.uid}</h2>}
+      {active ? (
+        <div>{children}</div>
+      ) : (
+        <h2 className='rotate'>{page.uid === 'frontpage' ? '' : page.uid}</h2>
+      )}
     </Link>
   )
 }

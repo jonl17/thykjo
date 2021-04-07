@@ -10,3 +10,7 @@
 .inactive-menu-item {
   width: 100px;
 }
+
+.menu-transition {
+  transition: flex-grow 0.2s ease-out;
+}

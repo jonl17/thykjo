@@ -1,5 +1,6 @@
 import React from 'react'
 import Eyes from '@cmp/site/Eyes'
+import Frontpage from '@cmp/site/Frontpage'
 
 type Props = {
   primary: {
@@ -10,13 +11,14 @@ type Props = {
 const Program = ({ primary: { program_name: name } }: Props) => {
   const types: { [key: string]: React.ElementType } = {
     Eyes,
+    Frontpage,
   }
 
-  const P = types[name]
+  const SelectedProgram = types[name]
 
-  if (!P) return null
+  if (!SelectedProgram) return null
 
-  return <P />
+  return <SelectedProgram />
 }
 
 export default Program
