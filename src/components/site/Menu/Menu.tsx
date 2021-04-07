@@ -31,7 +31,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
       onClick={() => navigate(page.url)}
     >
       {active ? (
-        <div>{children}</div>
+        children
       ) : (
         <Link to={page.url}>
           <h2 className='rotate'>
@@ -47,7 +47,7 @@ const Menu: React.FC = ({ children }) => {
   const menu = useGetMenu()
 
   return (
-    <div className='flex min-h-screen'>
+    <div className='flex flex-col lg:flex-row min-h-screen'>
       {menu.pages.map(page => (
         <MenuItem key={page.id} page={page}>
           {children}

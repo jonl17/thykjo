@@ -12,7 +12,7 @@ const Page = ({ data }: { data: any }) => {
     <>
       <div
         className={cn(
-          'page h-screen',
+          'page h-full lg:h-screen',
           page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2'
         )}
       >

@@ -24,10 +24,7 @@ const SEO = ({ title, description }: MetaProps) => {
   )
 }
 
-const MainLayout: React.FC<{ pageContext: PageProps }> = ({
-  children,
-  pageContext,
-}) => {
+const MainLayout: React.FC<{ pageContext: PageProps }> = ({ children }) => {
   const data = useStaticQuery(graphql`
     {
       site {
