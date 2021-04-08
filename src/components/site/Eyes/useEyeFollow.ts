@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 
 const useEyeFollow = (eyballClass: string, pupilClass: string) => {
   useEffect(() => {
-    console.log('runnin')
     const eyeBall: SVGCircleElement = document.querySelector(eyballClass)!
     const pupil: SVGCircleElement = document.querySelector(pupilClass)!
     const eyeArea = eyeBall.getBoundingClientRect()

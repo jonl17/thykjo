@@ -45,7 +45,7 @@
   h2,
   h3,
   h4 {
-    @apply mb-5;
+    @apply mb-6;
   }
 
   p {

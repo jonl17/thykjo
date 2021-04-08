@@ -42,8 +42,6 @@ const MainLayout: React.FC<{ pageContext: PageProps }> = ({
 
   const meta: MetaProps = data.site.siteMetadata
 
-  console.log(pageContext)
-
   return (
     <>
       <SEO {...meta} />
