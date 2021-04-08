@@ -12,10 +12,26 @@ export const fragment = graphql`
         text
       }
       subtitle
+      featured_image {
+        alt
+        url
+      }
       body {
         ... on PrismicPageBodyProgram {
           ...programSliceFragment
         }
+        ... on PrismicPageBodyRichText {
+          ...richTextSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment richTextSliceFragment on PrismicPageBodyRichText {
+    slice_type
+    primary {
+      text {
+        html
       }
     }
   }

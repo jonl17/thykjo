@@ -8,6 +8,10 @@ export interface PageInterface {
   subtitle: string
   body: any[]
   bg: string
+  featuredImage: {
+    alt: string | null
+    url: string
+  }
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -20,6 +24,7 @@ export const pageResolver = (node: any): PageInterface => ({
   subtitle: node.data.subtitle,
   body: node.data.body,
   bg: node.tags.find((tag: string) => tag.includes('bg-')) ?? 'bg-yellow',
+  featuredImage: node.data.featured_image,
 })
 
 export interface MenuInterface {

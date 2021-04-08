@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import Menu from '@cmp/site/Menu'
+import FeaturedImage from '@cmp/site/FeaturedImage'
 
 type MetaProps = {
   title: string
@@ -24,7 +25,10 @@ const SEO = ({ title, description }: MetaProps) => {
   )
 }
 
-const MainLayout: React.FC<{ pageContext: PageProps }> = ({ children }) => {
+const MainLayout: React.FC<{ pageContext: PageProps }> = ({
+  children,
+  pageContext,
+}) => {
   const data = useStaticQuery(graphql`
     {
       site {
@@ -37,6 +41,8 @@ const MainLayout: React.FC<{ pageContext: PageProps }> = ({ children }) => {
   `)
 
   const meta: MetaProps = data.site.siteMetadata
+
+  console.log(pageContext)
 
   return (
     <>

@@ -3,18 +3,16 @@ import Eyes from '@cmp/site/Eyes'
 import Frontpage from '@cmp/site/Frontpage'
 
 type Props = {
-  primary: {
-    program_name: string
-  }
+  programName: string
 }
 
-const Program = ({ primary: { program_name: name } }: Props) => {
+const Program = ({ programName }: Props) => {
   const types: { [key: string]: React.ElementType } = {
     Eyes,
     Frontpage,
   }
 
-  const SelectedProgram = types[name]
+  const SelectedProgram = types[programName]
 
   if (!SelectedProgram) return null
 

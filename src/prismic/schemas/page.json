@@ -19,12 +19,24 @@
         "label": "Subtitle"
       }
     },
+    "featured_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 662,
+          "height": 426
+        },
+        "thumbnails": [],
+        "label": "Featured image"
+      }
+    },
     "body": {
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
         "labels": {
-          "program": []
+          "program": [],
+          "rich_text": []
         },
         "choices": {
           "program": {
@@ -38,6 +50,31 @@
                 "type": "Text",
                 "config": {
                   "label": "Program name"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "rich_text": {
+            "type": "Slice",
+            "fieldset": "Rich Text",
+            "description": "Add text and headings with variations.",
+            "icon": "format_textdirection_l_to_r",
+            "display": "list",
+            "non-repeat": {
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+                  "allowTargetBlank": true,
+                  "label": "Text",
+                  "labels": {
+                    "XX": [
+                      {
+                        "name": "slim"
+                      }
+                    ]
+                  }
                 }
               }
             },

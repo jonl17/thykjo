@@ -6,6 +6,7 @@ require('dotenv').config({
 
 const { accessToken, repositoryName } = require('./prismic.config')
 const linkResolver = require('./src/prismic/linkResolver')
+const htmlSerializer = require('./src/prismic/htmlSerializer')
 
 const prismicPluginConfig = {
   resolve: 'gatsby-source-prismic',
@@ -13,6 +14,12 @@ const prismicPluginConfig = {
     repositoryName,
     accessToken,
     linkResolver: () => doc => linkResolver(doc),
+    htmlSerializer: ({ node, key, value }) => (
+      type,
+      element,
+      content,
+      children
+    ) => htmlSerializer(element, content),
     schemas: {
       page: require('./src/prismic/schemas/page.json'),
       menu: require('./src/prismic/schemas/menu.json'),

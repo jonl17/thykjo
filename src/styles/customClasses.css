@@ -20,4 +20,11 @@
   .inactive-menu-item {
     width: 100px;
   }
+
+  .rich-text > h2,
+  .rich-text > h3,
+  .rich-text > h4,
+  .rich-text > p {
+    padding-left: 3.5rem;
+  }
 }

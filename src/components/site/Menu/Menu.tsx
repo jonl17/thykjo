@@ -28,7 +28,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
         'inactive-menu-item cursor-pointer': !active,
         'flex-1 cursor-auto': active,
       })}
-      onClick={() => navigate(page.url)}
+      onClick={() => (active ? null : navigate(page.url))}
     >
       {active ? (
         children
