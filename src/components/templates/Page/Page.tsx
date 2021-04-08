@@ -8,6 +8,7 @@ import cn from 'classnames'
 import FeaturedImage from '@src/components/site/FeaturedImage'
 
 const Page = ({ data }: { data: any }) => {
+  console.log(data)
   const page = pageResolver(data.prismicPage)
   return (
     <>
@@ -18,7 +19,6 @@ const Page = ({ data }: { data: any }) => {
         )}
       >
         {page.title && <Head title={page.title} description={page.subtitle} />}
-        {page.featuredImage.url && <FeaturedImage {...page.featuredImage} />}
         {page.body.map((slice, i) => (
           <SliceMapping key={i} slice={slice} />
         ))}
