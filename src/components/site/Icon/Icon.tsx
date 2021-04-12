@@ -1,8 +1,8 @@
 import React from 'react'
-import { Logo, Eyes, Facebook, Instagram } from './svg'
+import { Logo, Eyes, Facebook, Instagram, Close } from './svg'
 import cn from 'classnames'
 
-type IconType = 'logo' | 'eyes' | 'facebook' | 'instagram'
+type IconType = 'logo' | 'eyes' | 'facebook' | 'instagram' | 'close'
 interface Props {
   type: IconType
   className?: string
@@ -14,6 +14,7 @@ const Icon = ({ type, className }: Props) => {
     eyes: Eyes,
     facebook: Facebook,
     instagram: Instagram,
+    close: Close,
   }
 
   const IconSvg = icons[type]

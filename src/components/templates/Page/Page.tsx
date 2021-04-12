@@ -11,19 +11,18 @@ const Page = ({ data }: { data: any }) => {
   const page = pageResolver(data.prismicPage)
 
   return (
-    <>
-      <div
-        className={cn(
-          'page h-full lg:min-h-screen max-w-6xl m-auto',
-          page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2'
-        )}
-      >
-        {page.title && <Head title={page.title} description={page.subtitle} />}
-        {page.body.map((slice, i) => (
-          <SliceMapping key={i} slice={slice} />
-        ))}
-      </div>
-    </>
+    <div
+      className={cn(
+        'page h-full lg:min-h-screen max-w-6xl m-auto relative',
+        page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2'
+      )}
+    >
+      {page.title && <Head title={page.title} description={page.subtitle} />}
+      <FeaturedImage {...page.featuredImage} />
+      {page.body.map((slice, i) => (
+        <SliceMapping key={i} slice={slice} />
+      ))}
+    </div>
   )
 }
 
