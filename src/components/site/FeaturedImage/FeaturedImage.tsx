@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Icon from '@cmp/site/Icon'
+import cn from 'classnames'
 
 type Props = {
   url: string
@@ -9,8 +10,15 @@ type Props = {
 const FeaturedImage = ({ url, alt }: Props) => {
   const [visible, setVisible] = useState(true)
 
-  return visible ? (
-    <div className='featured-image grid place-items-center py-10 absolute top-0 left-0 h-screen w-full '>
+  return (
+    <div
+      className={cn(
+        'featured-image grid place-items-center py-10 absolute top-0 left-0 h-screen w-full',
+        {
+          'featured-image--hide': !visible,
+        }
+      )}
+    >
       <button
         onClick={() => setVisible(false)}
         className='transform hover:rotate-3 transition relative focus:outline-none'
@@ -19,7 +27,7 @@ const FeaturedImage = ({ url, alt }: Props) => {
         <img src={url} alt={alt ?? ''} />
       </button>
     </div>
-  ) : null
+  )
 }
 
 export default FeaturedImage

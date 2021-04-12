@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { graphql, useStaticQuery, Link, navigate } from 'gatsby'
 import '@src/prismic/fragments/menu'
 import { menuResolver, PageInterface } from '@src/utils/resolvers'
 import cn from 'classnames'
 import { useLocation } from '@reach/router'
+import Icon from '@cmp/site/Icon'
+import { IconType } from '@cmp/site/Icon/Icon'
 
 const useGetMenu = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +24,12 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 
   const active = pathname === page.url || pathname === page.url + '/'
 
+  const icons: { [key: string]: IconType } = {
+    frontpage: 'verticalEyes',
+    thykjo: 'verticalThykjo',
+    verkefni: 'verticalVerkefni',
+  }
+
   return (
     <div
       className={cn('noise menu-transition', page.bg, {
@@ -33,9 +41,9 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
       {active ? (
         children
       ) : (
-        <Link to={page.url}>
-          <h2 className='rotate'>
-            {page.uid === 'frontpage' ? 'Heim' : page.uid}
+        <Link className='' to={page.url}>
+          <h2 className='fixed'>
+            <Icon className='lg:ml-8 lg:mt-8' type={icons[page.uid]} />
           </h2>
         </Link>
       )}

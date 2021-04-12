@@ -1,8 +1,25 @@
 import React from 'react'
-import { Logo, Eyes, Facebook, Instagram, Close } from './svg'
+import {
+  Logo,
+  Eyes,
+  Facebook,
+  Instagram,
+  Close,
+  VerticalEyes,
+  VerticalThykjo,
+  VerticalVerkefni,
+} from './svg'
 import cn from 'classnames'
 
-type IconType = 'logo' | 'eyes' | 'facebook' | 'instagram' | 'close'
+export type IconType =
+  | 'logo'
+  | 'eyes'
+  | 'facebook'
+  | 'instagram'
+  | 'close'
+  | 'verticalEyes'
+  | 'verticalThykjo'
+  | 'verticalVerkefni'
 interface Props {
   type: IconType
   className?: string
@@ -15,6 +32,9 @@ const Icon = ({ type, className }: Props) => {
     facebook: Facebook,
     instagram: Instagram,
     close: Close,
+    verticalEyes: VerticalEyes,
+    verticalThykjo: VerticalThykjo,
+    verticalVerkefni: VerticalVerkefni,
   }
 
   const IconSvg = icons[type]
