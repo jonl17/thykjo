@@ -21,10 +21,16 @@
     width: 100px;
   }
 
-  .rich-text > h2,
-  .rich-text > h3,
-  .rich-text > h4,
-  .rich-text > p {
-    padding-left: 3.5rem;
+  .rich-text > h1 {
+    margin-left: -3.5rem;
+  }
+
+  .rich-text > p:not(:last-of-type) {
+    padding-right: 2rem;
+  }
+
+  .member__image {
+    height: 331px;
+    width: 465px;
   }
 }

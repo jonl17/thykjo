@@ -36,7 +36,8 @@
       "config": {
         "labels": {
           "program": [],
-          "rich_text": []
+          "rich_text": [],
+          "members": []
         },
         "choices": {
           "program": {
@@ -79,6 +80,32 @@
               }
             },
             "repeat": {}
+          },
+          "members": {
+            "type": "Slice",
+            "fieldset": "Members",
+            "description": "Add existing members into this slice.",
+            "icon": "people_outline",
+            "display": "list",
+            "non-repeat": {
+              "title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading2",
+                  "label": "Title"
+                }
+              }
+            },
+            "repeat": {
+              "member": {
+                "type": "Link",
+                "config": {
+                  "select": "document",
+                  "customtypes": ["member"],
+                  "label": "Member"
+                }
+              }
+            }
           }
         }
       }

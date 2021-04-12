@@ -8,13 +8,13 @@ import cn from 'classnames'
 import FeaturedImage from '@src/components/site/FeaturedImage'
 
 const Page = ({ data }: { data: any }) => {
-  console.log(data)
   const page = pageResolver(data.prismicPage)
+
   return (
     <>
       <div
         className={cn(
-          'page h-full lg:min-h-screen',
+          'page h-full lg:min-h-screen max-w-6xl m-auto',
           page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2'
         )}
       >

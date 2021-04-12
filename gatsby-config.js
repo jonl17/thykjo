@@ -58,5 +58,7 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     prismicPluginConfig,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 }

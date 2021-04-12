@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import './member'
 
 export const fragment = graphql`
   fragment pageFragmentFull on PrismicPage {
@@ -22,6 +23,28 @@ export const fragment = graphql`
         }
         ... on PrismicPageBodyRichText {
           ...richTextSliceFragment
+        }
+        ... on PrismicPageBodyMembers {
+          ...membersSliceFragment
+        }
+      }
+    }
+  }
+
+  fragment membersSliceFragment on PrismicPageBodyMembers {
+    slice_type
+    primary {
+      title {
+        html
+        text
+      }
+    }
+    items {
+      member {
+        document {
+          ... on PrismicMember {
+            ...memberFragmentFull
+          }
         }
       }
     }
