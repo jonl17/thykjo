@@ -10,15 +10,15 @@ const FeaturedImage = ({ url, alt }: Props) => {
   const [visible, setVisible] = useState(true)
 
   return visible ? (
-    <button
-      onClick={() => setVisible(false)}
-      className='absolute top-0 left-0 h-screen w-full focus:outline-none'
-    >
-      <div className='featured-image w-full grid place-items-center py-10 relative'>
-        <Icon className='absolute right-64 top-12' type='close' />
+    <div className='featured-image grid place-items-center py-10 absolute top-0 left-0 h-screen w-full '>
+      <button
+        onClick={() => setVisible(false)}
+        className='transform hover:rotate-3 transition relative focus:outline-none'
+      >
+        <Icon className='absolute right-5 top-5 z-10' type='close' />
         <img src={url} alt={alt ?? ''} />
-      </div>
-    </button>
+      </button>
+    </div>
   ) : null
 }
 
