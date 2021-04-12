@@ -15,7 +15,7 @@ const Member = ({
 
   return (
     <div className={cn('flex mb-10', odd ? 'flex-row-reverse' : 'flex-row')}>
-      <div className='lg:w-6/12 lg:pr-5 grid place-content-center'>
+      <div className='lg:w-8/12 lg:pr-5 grid place-content-center'>
         <h3>{name.text}</h3>
         <h4>{role}</h4>
         <div dangerouslySetInnerHTML={{ __html: bio.html }} />
@@ -23,7 +23,7 @@ const Member = ({
       </div>
       <div className='member__image py-5'>
         <img
-          className={cn('h-full', odd ? 'lg:-ml-14' : 'lg:-mr-14')}
+          className={cn('h-full', odd ? 'float-right pr-10' : 'lg:-mr-14')}
           src={portrait.url}
         />
       </div>
