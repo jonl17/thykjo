@@ -2,7 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import Menu from '@cmp/site/Menu'
-import FeaturedImage from '@cmp/site/FeaturedImage'
 
 type MetaProps = {
   title: string
@@ -46,7 +45,7 @@ const MainLayout: React.FC<{ pageContext: PageProps }> = ({
     <>
       <SEO {...meta} />
       <div className='main-layout'>
-        <Menu>{children}</Menu>
+        <Menu ctx={pageContext}>{children}</Menu>
       </div>
     </>
   )

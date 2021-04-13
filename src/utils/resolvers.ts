@@ -111,6 +111,7 @@ export interface ProjectInterface {
     url: string
     alt: string
   }
+  bg: string
 }
 
 export const projectResolver = (node: any): ProjectInterface => ({
@@ -123,4 +124,5 @@ export const projectResolver = (node: any): ProjectInterface => ({
   shortDescription: node.data.short_description,
   type: node.data.type,
   featuredImage: node.data.featured_image,
+  bg: 'bg-red',
 })

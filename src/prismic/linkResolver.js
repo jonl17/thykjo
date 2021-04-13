@@ -7,6 +7,8 @@ const linkResolver = doc => {
 
   if (isFrontpage) {
     return '/'
+  } else if (doc.type === 'project') {
+    return `/verkefni/${doc.uid}`
   } else return `/${doc.uid}`
 }
 

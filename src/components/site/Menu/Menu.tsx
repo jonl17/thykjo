@@ -48,7 +48,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
   )
 }
 
-const Menu: React.FC = ({ children }) => {
+const Menu: React.FC<{ ctx: any }> = ({ children, ctx }) => {
   const menu = useGetMenu()
 
   return (
@@ -58,6 +58,11 @@ const Menu: React.FC = ({ children }) => {
           {children}
         </MenuItem>
       ))}
+      {ctx.type === 'project' && (
+        <div className='noise bg-red menu-transition flex-1 text-yellow-2'>
+          {children}
+        </div>
+      )}
     </div>
   )
 }
