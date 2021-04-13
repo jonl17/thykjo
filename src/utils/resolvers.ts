@@ -112,6 +112,7 @@ export interface ProjectInterface {
     alt: string
   }
   bg: string
+  body: any[]
 }
 
 export const projectResolver = (node: any): ProjectInterface => ({
@@ -125,4 +126,5 @@ export const projectResolver = (node: any): ProjectInterface => ({
   type: node.data.type,
   featuredImage: node.data.featured_image,
   bg: 'bg-red',
+  body: node.data.body,
 })

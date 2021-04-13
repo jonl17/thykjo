@@ -21,6 +21,21 @@ export const fragment = graphql`
         html
       }
       type
+      body {
+        ... on PrismicProjectBodyRichText {
+          ...projectRichTextSlice
+        }
+      }
+    }
+  }
+
+  fragment projectRichTextSlice on PrismicProjectBodyRichText {
+    slice_type
+    primary {
+      text {
+        html
+        text
+      }
     }
   }
 `
