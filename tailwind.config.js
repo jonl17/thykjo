@@ -19,7 +19,7 @@ module.exports = {
       h2: ['35px', '35px'],
       h3: ['25px', '25px'],
       h4: ['16px', '16px'],
-      parag: ['16px', '21.04px'],
+      parag: ['18px', '24.04px'],
     },
     colors: {
       yellow: '#ffc900',
