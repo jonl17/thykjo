@@ -15,7 +15,8 @@
     "paths": {
       "@src/*": ["src/*"],
       "@root/*": ["*"],
-      "@cmp/*": ["src/components/*"]
+      "@cmp/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": ["node_modules", "public", ".cache"]

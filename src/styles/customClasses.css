@@ -1,3 +1,5 @@
+@tailwind base;
+@tailwind components;
 @import url('./lib/animations.css');
 
 .noise {
@@ -38,5 +40,9 @@
 
   .featured-image--hide {
     animation: popout 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  }
+
+  .project-grid-width {
+    width: 446px;
   }
 }

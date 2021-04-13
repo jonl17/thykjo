@@ -1,6 +1,3 @@
-import { FluidObject } from 'gatsby-image'
-import { notDeepEqual } from 'node:assert'
-
 export interface PageInterface {
   id: string
   uid: string
@@ -93,4 +90,37 @@ export const memberResolver = (node: any): MemberInterface => ({
     url: node.data.website_url.url,
     label: node.data.website_label,
   },
+})
+
+export interface ProjectInterface {
+  id: string
+  uid: string
+  tags: string[]
+  lang: string
+  url: string
+  title: {
+    text: string
+    html: string
+  }
+  shortDescription: {
+    text: string
+    html: string
+  }
+  type: string
+  featuredImage: {
+    url: string
+    alt: string
+  }
+}
+
+export const projectResolver = (node: any): ProjectInterface => ({
+  id: node.id,
+  uid: node.uid,
+  tags: node.tags,
+  lang: node.lang,
+  url: node.url,
+  title: node.data.title,
+  shortDescription: node.data.short_description,
+  type: node.data.type,
+  featuredImage: node.data.featured_image,
 })

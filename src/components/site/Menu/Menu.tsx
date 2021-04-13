@@ -5,7 +5,6 @@ import { menuResolver, PageInterface } from '@src/utils/resolvers'
 import cn from 'classnames'
 import { useLocation } from '@reach/router'
 import Icon from '@cmp/site/Icon'
-import { IconType } from '@cmp/site/Icon/Icon'
 
 const useGetMenu = () => {
   const data = useStaticQuery(graphql`
@@ -24,11 +23,7 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 
   const active = pathname === page.url || pathname === page.url + '/'
 
-  const icons: { [key: string]: IconType } = {
-    frontpage: 'verticalEyes',
-    thykjo: 'verticalThykjo',
-    verkefni: 'verticalVerkefni',
-  }
+  const isFrontpage = page.uid === 'frontpage'
 
   return (
     <div
@@ -41,10 +36,12 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
       {active ? (
         children
       ) : (
-        <Link className='' to={page.url}>
-          <h2 className='fixed'>
-            <Icon className='lg:ml-8 lg:mt-8' type={icons[page.uid]} />
-          </h2>
+        <Link to={page.url}>
+          {isFrontpage ? (
+            <Icon className='lg:ml-8 lg:mt-8' type='verticalEyes' />
+          ) : (
+            <h2 className='rotate'>{page.title}</h2>
+          )}
         </Link>
       )}
     </div>

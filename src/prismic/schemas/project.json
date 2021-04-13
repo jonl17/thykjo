@@ -1,0 +1,43 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title"
+      }
+    },
+    "type": {
+      "type": "Text",
+      "config": {
+        "label": "Type",
+        "placeholder": "T.d. búningalína, innsetning etc..."
+      }
+    },
+    "short_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+        "allowTargetBlank": true,
+        "label": "Short description"
+      }
+    },
+    "featured_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 466,
+          "height": 331
+        },
+        "thumbnails": [],
+        "label": "Featured image"
+      }
+    }
+  }
+}
