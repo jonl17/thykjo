@@ -21,8 +21,8 @@ const SingleProject = ({
       onMouseLeave={() => setTilt(false)}
     >
       <img
-        alt={featuredImage.alt}
-        src={featuredImage.url}
+        alt={featuredImage.smaller.alt}
+        src={featuredImage.smaller.url}
         className={cn('transition', tilt ? 'transform rotate-3 ' : null)}
       />
       <div className='mt-5'>

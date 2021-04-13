@@ -35,7 +35,13 @@
           "width": 466,
           "height": 331
         },
-        "thumbnails": [],
+        "thumbnails": [
+          {
+            "name": "bigger",
+            "width": 662,
+            "height": 426
+          }
+        ],
         "label": "Featured image"
       }
     },
@@ -44,7 +50,8 @@
       "fieldset": "Slice zone",
       "config": {
         "labels": {
-          "rich_text": []
+          "rich_text": [],
+          "gallery": []
         },
         "choices": {
           "rich_text": {
@@ -71,6 +78,41 @@
               }
             },
             "repeat": {}
+          },
+          "gallery": {
+            "type": "Slice",
+            "fieldset": "Gallery",
+            "description": "Add images that open in a modal window.",
+            "icon": "aspect_ratio",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "width": 434,
+                    "height": 309
+                  },
+                  "thumbnails": [
+                    {
+                      "name": "bigger",
+                      "width": 661,
+                      "height": 425
+                    }
+                  ],
+                  "label": "Image"
+                }
+              },
+              "caption": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted",
+                  "allowTargetBlank": true,
+                  "label": "Caption"
+                }
+              }
+            }
           }
         }
       }

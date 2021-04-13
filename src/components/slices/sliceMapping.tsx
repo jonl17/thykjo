@@ -2,6 +2,7 @@ import React from 'react'
 import Program from './Program'
 import RichText from './RichText'
 import Members from './Members'
+import Gallery from './Gallery'
 import { memberResolver } from '@src/utils/resolvers'
 
 type SliceProps = {
@@ -27,6 +28,14 @@ const findProps = (slice: any) => {
           memberResolver(item.member.document)
         ),
       }
+    case 'gallery':
+      return {
+        images: slice.items.map((item: any) => ({
+          smaller: item.image,
+          bigger: item.image.thumbnails.bigger,
+          caption: item.caption,
+        })),
+      }
     default:
       return slice
   }
@@ -37,11 +46,10 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     program: Program,
     rich_text: RichText,
     members: Members,
+    gallery: Gallery,
   }
 
   const Cmp = sliceTypes[slice.slice_type]
-
-  console.log(slice.slice_type)
 
   const props = findProps(slice)
 

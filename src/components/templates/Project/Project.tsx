@@ -15,7 +15,7 @@ const Project = ({ data }: { data: any }) => {
       className={cn('page h-full lg:min-h-screen max-w-6xl m-auto relative')}
     >
       <Head title={project.title.text} description={project.type} />
-      <FeaturedImage {...project.featuredImage} />
+      <FeaturedImage {...project.featuredImage.bigger} />
       {project.body.map((slice, i) => (
         <SliceMapping key={i} slice={slice} />
       ))}

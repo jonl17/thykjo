@@ -49,4 +49,12 @@
   .project-grid-width {
     width: 446px;
   }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 435px));
+  }
+
+  .modal-width {
+    width: 661px;
+  }
 }

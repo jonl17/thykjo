@@ -15,6 +15,12 @@ export const fragment = graphql`
       featured_image {
         alt
         url
+        thumbnails {
+          bigger {
+            url
+            alt
+          }
+        }
       }
       short_description {
         text
@@ -25,6 +31,29 @@ export const fragment = graphql`
         ... on PrismicProjectBodyRichText {
           ...projectRichTextSlice
         }
+        ... on PrismicProjectBodyGallery {
+          ...projectGallerySlice
+        }
+      }
+    }
+  }
+
+  fragment projectGallerySlice on PrismicProjectBodyGallery {
+    slice_type
+    items {
+      image {
+        alt
+        url
+        thumbnails {
+          bigger {
+            alt
+            url
+          }
+        }
+      }
+      caption {
+        text
+        html
       }
     }
   }

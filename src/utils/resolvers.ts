@@ -1,3 +1,8 @@
+export type Image = {
+  alt: string
+  url: string
+}
+
 export interface PageInterface {
   id: string
   uid: string
@@ -8,10 +13,7 @@ export interface PageInterface {
   subtitle: string
   body: any[]
   bg: string
-  featuredImage: {
-    alt: string | null
-    url: string
-  }
+  featuredImage: Image
 }
 
 export const pageResolver = (node: any): PageInterface => ({
@@ -66,10 +68,7 @@ export interface MemberInterface {
     text: string
     html: string
   }
-  portrait: {
-    alt: string
-    url: string
-  }
+  portrait: Image
   role: string
   website: {
     url: string
@@ -108,8 +107,8 @@ export interface ProjectInterface {
   }
   type: string
   featuredImage: {
-    url: string
-    alt: string
+    smaller: Image
+    bigger: Image
   }
   bg: string
   body: any[]
@@ -124,7 +123,10 @@ export const projectResolver = (node: any): ProjectInterface => ({
   title: node.data.title,
   shortDescription: node.data.short_description,
   type: node.data.type,
-  featuredImage: node.data.featured_image,
   bg: 'bg-red',
   body: node.data.body,
+  featuredImage: {
+    smaller: node.data.featured_image,
+    bigger: node.data.featured_image.thumbnails.bigger,
+  },
 })
