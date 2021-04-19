@@ -14,10 +14,6 @@
   transition: flex-grow 0.2s ease-out;
 }
 
-.rich-text {
-  min-height: calc(100vh - 12rem);
-}
-
 /* classes only active on larger screens */
 @media (min-width: 1024px) {
   .rotate {
