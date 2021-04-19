@@ -14,7 +14,7 @@ const Page = ({ data }: { data: any }) => {
     <div
       className={cn(
         'page h-full lg:min-h-screen max-w-6xl m-auto relative',
-        page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2'
+        page.uid === 'frontpage' ? 'text-black' : 'text-yellow-2 mb-16'
       )}
     >
       {page.title && <Head title={page.title} description={page.subtitle} />}
