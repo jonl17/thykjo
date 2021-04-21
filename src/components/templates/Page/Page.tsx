@@ -19,9 +19,11 @@ const Page = ({ data }: { data: any }) => {
     >
       {page.title && <Head title={page.title} description={page.subtitle} />}
       {page.featuredImage.url && <FeaturedImage {...page.featuredImage} />}
-      {page.body.map((slice, i) => (
-        <SliceMapping key={i} slice={slice} />
-      ))}
+      <div className='flex flex-wrap lg:pl-16'>
+        {page.body.map((slice, i) => (
+          <SliceMapping key={i} slice={slice} />
+        ))}
+      </div>
     </div>
   )
 }

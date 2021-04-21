@@ -54,31 +54,6 @@
           "gallery": []
         },
         "choices": {
-          "rich_text": {
-            "type": "Slice",
-            "fieldset": "Rich Text",
-            "description": "Add text and headings with variations.",
-            "icon": "format_textdirection_l_to_r",
-            "display": "list",
-            "non-repeat": {
-              "text": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
-                  "allowTargetBlank": true,
-                  "label": "Text",
-                  "labels": {
-                    "XX": [
-                      {
-                        "name": "slim"
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "repeat": {}
-          },
           "gallery": {
             "type": "Slice",
             "fieldset": "Gallery",
@@ -113,6 +88,49 @@
                 }
               }
             }
+          },
+          "rich_text": {
+            "type": "Slice",
+            "fieldset": "Rich Text",
+            "description": "Add text and headings with variations.",
+            "icon": "format_textdirection_l_to_r",
+            "display": "list",
+            "non-repeat": {
+              "paragraph_style": {
+                "type": "Select",
+                "config": {
+                  "options": ["wide", "slim", "center"],
+                  "default_value": "wide",
+                  "label": "Paragraph style"
+                }
+              },
+              "text": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, rtl",
+                  "allowTargetBlank": true,
+                  "label": "Text"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "heading": {
+            "type": "Slice",
+            "fieldset": "Heading",
+            "description": "Large text, looks good at top of page.",
+            "icon": "text_fields",
+            "display": "list",
+            "non-repeat": {
+              "heading": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Heading"
+                }
+              }
+            },
+            "repeat": {}
           }
         }
       }

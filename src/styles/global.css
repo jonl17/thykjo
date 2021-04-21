@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   @font-face {
@@ -62,7 +64,19 @@
   }
 }
 
-@tailwind components;
-@tailwind utilities;
+.wide > p {
+  @apply text-paragLg;
+}
+
+.slim {
+  @apply lg:w-6/12;
+}
+
+.center > h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
 
 @import './customClasses.css';

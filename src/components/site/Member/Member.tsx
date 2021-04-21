@@ -23,7 +23,10 @@ const Member = ({
       </div>
       <div className='member__image py-5'>
         <img
-          className={cn('h-full', odd ? 'float-right pr-10' : 'lg:-mr-14')}
+          className={cn(
+            'w-full h-full object-cover object-center',
+            odd ? 'float-right pr-10' : 'lg:-mr-14'
+          )}
           src={portrait.url}
         />
       </div>

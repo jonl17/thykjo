@@ -13,7 +13,7 @@ const FeaturedImage = ({ url, alt }: Props) => {
   return (
     <div
       className={cn(
-        'featured-image grid place-items-center py-10 absolute top-0 left-0 h-screen w-full',
+        'grid place-items-center py-10 absolute top-0 left-0 h-screen w-full',
         {
           'featured-image--hide': !visible,
         }
@@ -21,10 +21,14 @@ const FeaturedImage = ({ url, alt }: Props) => {
     >
       <button
         onClick={() => setVisible(false)}
-        className='transform hover:rotate-3 transition relative focus:outline-none'
+        className='transform hover:rotate-3 transition relative focus:outline-none featured-image'
       >
         <Icon className='absolute right-5 top-5 z-10' type='close' />
-        <img src={url} alt={alt ?? ''} />
+        <img
+          className='object-cover object-center w-full h-full'
+          src={url}
+          alt={alt ?? ''}
+        />
       </button>
     </div>
   )

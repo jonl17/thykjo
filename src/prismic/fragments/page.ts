@@ -27,6 +27,18 @@ export const fragment = graphql`
         ... on PrismicPageBodyMembers {
           ...membersSliceFragment
         }
+        ... on PrismicPageBodyHeading {
+          ...pageHeadingSlice
+        }
+      }
+    }
+  }
+
+  fragment pageHeadingSlice on PrismicPageBodyHeading {
+    slice_type
+    primary {
+      heading {
+        text
       }
     }
   }
@@ -53,6 +65,7 @@ export const fragment = graphql`
   fragment richTextSliceFragment on PrismicPageBodyRichText {
     slice_type
     primary {
+      paragraph_style
       text {
         html
       }

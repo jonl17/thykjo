@@ -3,6 +3,7 @@ import Program from './Program'
 import RichText from './RichText'
 import Members from './Members'
 import Gallery from './Gallery'
+import Heading from './Heading'
 import { memberResolver } from '@src/utils/resolvers'
 
 type SliceProps = {
@@ -20,6 +21,7 @@ const findProps = (slice: any) => {
     case 'rich_text':
       return {
         html: slice.primary.text.html,
+        paragraphStyle: slice.primary.paragraph_style,
       }
     case 'members':
       return {
@@ -36,6 +38,10 @@ const findProps = (slice: any) => {
           caption: item.caption,
         })),
       }
+    case 'heading':
+      return {
+        heading: slice.primary.heading.text,
+      }
     default:
       return slice
   }
@@ -47,6 +53,7 @@ const SliceMapping = ({ slice }: { slice: SliceProps }) => {
     rich_text: RichText,
     members: Members,
     gallery: Gallery,
+    heading: Heading,
   }
 
   const Cmp = sliceTypes[slice.slice_type]

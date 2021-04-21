@@ -1,13 +1,16 @@
 import React from 'react'
+import cn from 'classnames'
 
 type Props = {
   html: string
+  paragraphStyle: 'wide' | 'slim' | 'center'
 }
 
-const RichText = ({ html }: Props) => {
+const RichText = ({ html, paragraphStyle }: Props) => {
+  console.log(paragraphStyle)
   return (
     <div
-      className='rich-text flex flex-wrap lg:mb-16 lg:pl-16'
+      className={cn('rich-text lg:mb-16 max-w-4xl', paragraphStyle)}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   )

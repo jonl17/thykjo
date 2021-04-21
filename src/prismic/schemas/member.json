@@ -39,8 +39,8 @@
       "type": "Image",
       "config": {
         "constraint": {
-          "width": 465,
-          "height": 331
+          "width": 800,
+          "height": null
         },
         "thumbnails": [],
         "label": "Portrait"

@@ -38,6 +38,11 @@
     width: 465px;
   }
 
+  .featured-image {
+    width: 662px;
+    height: 426px;
+  }
+
   .featured-image--hide {
     animation: popout 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   }

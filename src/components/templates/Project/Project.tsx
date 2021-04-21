@@ -16,9 +16,11 @@ const Project = ({ data }: { data: any }) => {
     >
       <Head title={project.title.text} description={project.type} />
       <FeaturedImage {...project.featuredImage.bigger} />
-      {project.body.map((slice, i) => (
-        <SliceMapping key={i} slice={slice} />
-      ))}
+      <div className='flex flex-wrap lg:pl-16'>
+        {project.body.map((slice, i) => (
+          <SliceMapping key={i} slice={slice} />
+        ))}
+      </div>
     </div>
   )
 }

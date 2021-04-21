@@ -34,6 +34,18 @@ export const fragment = graphql`
         ... on PrismicProjectBodyGallery {
           ...projectGallerySlice
         }
+        ... on PrismicProjectBodyHeading {
+          ...projectHeadingSlice
+        }
+      }
+    }
+  }
+
+  fragment projectHeadingSlice on PrismicProjectBodyHeading {
+    slice_type
+    primary {
+      heading {
+        text
       }
     }
   }
@@ -61,6 +73,7 @@ export const fragment = graphql`
   fragment projectRichTextSlice on PrismicProjectBodyRichText {
     slice_type
     primary {
+      paragraph_style
       text {
         html
         text
