@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Image } from '@src/utils/resolvers'
+import Icon from '@cmp/site/Icon'
 
 interface GalleryProps {
   images: {
@@ -36,8 +37,9 @@ const Gallery = ({ images }: GalleryProps) => {
         <ImageModal>
           <button
             onClick={() => setModal(null)}
-            className='fixed top-0 left-0 h-screen w-full grid place-content-center bg-black m-auto'
+            className='fixed top-0 left-0 h-screen w-full grid place-content-center bg-red noise m-auto'
           >
+            <Icon className='absolute top-16 right-32' type='close' />
             <div className='modal-width'>
               <img
                 className='mb-5'
