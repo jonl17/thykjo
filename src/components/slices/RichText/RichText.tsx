@@ -1,5 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
+import { Fade } from 'react-reveal'
 
 type Props = {
   html: string
@@ -9,14 +10,16 @@ type Props = {
 
 const RichText = ({ html, paragraphStyle, fontSize }: Props) => {
   return (
-    <div
-      className={cn(
-        'rich-text lg:mb-8 max-w-4xl lg:pr-8',
-        paragraphStyle,
-        `rich-text--${fontSize}`
-      )}
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
+    <Fade up distance='25px' duration={500}>
+      <div
+        className={cn(
+          'rich-text lg:mb-8 max-w-4xl lg:pr-8',
+          paragraphStyle,
+          `rich-text--${fontSize}`
+        )}
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+    </Fade>
   )
 }
 

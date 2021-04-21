@@ -13,7 +13,7 @@ const FeaturedImage = ({ url, alt }: Props) => {
   return (
     <div
       className={cn(
-        'grid place-items-center py-10 absolute top-0 left-0 h-screen w-full',
+        'grid place-items-center py-10 absolute top-0 left-0 h-screen w-full z-50',
         {
           'featured-image--hide': !visible,
         }
