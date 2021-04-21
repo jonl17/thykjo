@@ -37,7 +37,7 @@ const Gallery = ({ images }: GalleryProps) => {
         <ImageModal>
           <button
             onClick={() => setModal(null)}
-            className='fixed top-0 left-0 h-screen w-full grid place-content-center bg-red noise m-auto'
+            className='fixed top-0 left-0 h-screen w-full grid place-content-center bg-red noise m-auto z-50'
           >
             <Icon className='absolute top-16 right-32' type='close' />
             <div className='modal-width'>
@@ -55,7 +55,7 @@ const Gallery = ({ images }: GalleryProps) => {
         {images.map(image => (
           <button
             onClick={() => setModal(image)}
-            className='focus:outline-none'
+            className='focus:outline-none transform hover:rotate-3 transition z-0'
             key={image.smaller.url}
           >
             <img src={image.smaller.url} alt={image.smaller.alt} />
