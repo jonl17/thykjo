@@ -22,6 +22,7 @@ const findProps = (slice: any) => {
       return {
         html: slice.primary.text.html,
         paragraphStyle: slice.primary.paragraph_style,
+        fontSize: slice.primary.font_size,
       }
     case 'members':
       return {

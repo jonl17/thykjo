@@ -21,6 +21,7 @@ module.exports = {
       h4: ['16px', '16px'],
       parag: ['18px', '24.04px'],
       paragLg: ['24px', '33px'],
+      paragSm: ['16px', '20px'],
     },
     colors: {
       yellow: '#ffc900',

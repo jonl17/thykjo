@@ -42,7 +42,7 @@ const AllProjects = () => {
   const projects = useGetAllProjects()
 
   return (
-    <div className='grid lg:grid-cols-2 mt-8 gap-10 place-items-center '>
+    <div className='grid lg:grid-cols-2 mt-8 gap-10'>
       {projects.map(project => (
         <SingleProject key={project.url} {...project} />
       ))}

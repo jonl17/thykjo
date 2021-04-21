@@ -73,6 +73,7 @@ export const fragment = graphql`
   fragment projectRichTextSlice on PrismicProjectBodyRichText {
     slice_type
     primary {
+      font_size
       paragraph_style
       text {
         html

@@ -5,6 +5,7 @@ import { menuResolver, PageInterface } from '@src/utils/resolvers'
 import cn from 'classnames'
 import { useLocation } from '@reach/router'
 import Icon from '@cmp/site/Icon'
+import { IconType } from '../Icon/Icon'
 
 const useGetMenu = () => {
   const data = useStaticQuery(graphql`
@@ -25,6 +26,12 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
 
   const isFrontpage = page.uid === 'frontpage'
 
+  const findIcon: { [key: string]: IconType } = {
+    frontpage: 'verticalEyes',
+    verkefni: 'verticalVerkefni',
+    thykjo: 'verticalThykjo',
+  }
+
   return (
     <div
       className={cn('noise menu-transition', page.bg, {
@@ -37,11 +44,9 @@ const MenuItem: React.FC<{ page: PageInterface }> = ({ page, children }) => {
         children
       ) : (
         <Link to={page.url}>
-          {isFrontpage ? (
-            <Icon className='lg:ml-8 lg:mt-8' type='verticalEyes' />
-          ) : (
-            <h2 className='rotate'>{page.title}</h2>
-          )}
+          <div className='w-full h-full pt-8 relative flex justify-center rotate'>
+            <Icon className='fixed' type={findIcon[page.uid]} />
+          </div>
         </Link>
       )}
     </div>

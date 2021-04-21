@@ -103,7 +103,6 @@
             "fieldset": "Rich Text",
             "description": "Add text and headings with variations.",
             "icon": "format_textdirection_l_to_r",
-            "display": "list",
             "non-repeat": {
               "paragraph_style": {
                 "type": "Select",
@@ -111,6 +110,14 @@
                   "options": ["wide", "slim", "center"],
                   "default_value": "wide",
                   "label": "Paragraph style"
+                }
+              },
+              "font_size": {
+                "type": "Select",
+                "config": {
+                  "options": ["normal", "small", "large"],
+                  "default_value": "normal",
+                  "label": "Font size"
                 }
               },
               "text": {

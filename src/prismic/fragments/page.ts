@@ -65,6 +65,7 @@ export const fragment = graphql`
   fragment richTextSliceFragment on PrismicPageBodyRichText {
     slice_type
     primary {
+      font_size
       paragraph_style
       text {
         html

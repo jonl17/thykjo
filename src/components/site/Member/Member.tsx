@@ -16,7 +16,7 @@ const Member = ({
   return (
     <div className={cn('flex mb-10', odd ? 'flex-row-reverse' : 'flex-row')}>
       <div className='lg:w-7/12 lg:pr-5 grid place-content-center'>
-        <h3>{name.text}</h3>
+        <h3 className='mb-2'>{name.text}</h3>
         <h4>{role}</h4>
         <div dangerouslySetInnerHTML={{ __html: bio.html }} />
         <p>{website.label}</p>

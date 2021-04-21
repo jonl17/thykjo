@@ -16,9 +16,8 @@
 
 /* classes only active on larger screens */
 @media (min-width: 1024px) {
-  .rotate {
-    transform-origin: bottom;
-    transform: rotate(90deg) translate(50%, 50%);
+  .rotate:hover > svg {
+    transform: rotate(180deg);
   }
 
   .inactive-menu-item {
